@@ -9,6 +9,8 @@ const int LOG = 30;
 
 ll dp[MAXN], a[MAXN];
 int last[LOG+1], p[LOG+1];
+// last[b] = última vez (mais à direita) que o bit 2^b apareceu no prefixo de [1; i] atual
+// p[i] = bit b que é o i-ésimo ao ordená-los por aparição decrescente (último / mais à direita para primeiro / mais à esquerda)
 
 struct Node {
     ll mn;
@@ -82,7 +84,7 @@ int main() {
         sort(p, p+LOG+1, cmp);
 
         int r=i-1, rngOr = 0;
-        vector<tuple<int, int, int>> rngsOr;
+        vector<tuple<int, int, int>> rngsOr; // {l, r, OR} tal que para as dp's em [l, r] somaremos OR
         for (int j=0; j<=LOG; j++) { 
             if (last[p[j]] == -1) break;
 
