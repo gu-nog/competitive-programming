@@ -14,8 +14,9 @@ int main() {
 
     int ans = 0, tmp = 0;
     for (int i=0; i<n; i++) {
-        if (a[i] == 0) continue;
+        // manter diags máximas >= i+1
         tmp -= freq[i];
+        if (a[i] == 0) continue;
         ans = max(ans, tmp + 1);
 
         if (i+a[i] < n) freq[i + a[i]]++;
