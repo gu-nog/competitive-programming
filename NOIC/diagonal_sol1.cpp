@@ -1,11 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-pode considerar diagonal mais baixa se fileira atual é última da resposta -> é a i+1
-compara diagonal máxima (maior ou igual)
-*/
-
 const int MAXN = 3e5;
 
 int a[MAXN], allDiags[2*MAXN], freq[2*MAXN];
